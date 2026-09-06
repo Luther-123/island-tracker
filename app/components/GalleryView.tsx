@@ -1,46 +1,13 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useTransition } from 'react'
+import { addGalleryPhoto, deleteGalleryPhoto } from '../db-actions'
 import { Image as ImageIcon, Calendar, Plus, X } from 'lucide-react'
 
-export default function GalleryView({ islandName }: { islandName: string }) {
+export default function GalleryView({ islandId, islandName, initialPhotos }: { islandId: number, islandName: string, initialPhotos: any[] }) {
     const [filter, setFilter] = useState('All')
     const [isModalOpen, setIsModalOpen] = useState(false)
-
-    const [memories, setMemories] = useState([
-        {
-            id: 1,
-            title: 'Lavender Forest Path',
-            date: '19 Sep 2026',
-            tag: 'Scenery',
-            url: 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=800&auto=format&fit=crop',
-            likes: 14
-        },
-        {
-            id: 2,
-            title: 'Stargazing Resident Square',
-            date: '15 Sep 2026',
-            tag: 'Residents',
-            url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
-            likes: 28
-        },
-        {
-            id: 3,
-            title: 'Museum Entrance Waterfall',
-            date: '12 Sep 2026',
-            tag: 'Scenery',
-            url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=800&auto=format&fit=crop',
-            likes: 19
-        },
-        {
-            id: 4,
-            title: 'Riverbank Rest Area',
-            date: '10 Sep 2026',
-            tag: 'Residents',
-            url: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=800&auto=format&fit=crop',
-            likes: 32
-        },
-    ])
+    const [pending, startTransition] = useTransition()
 
     const [newTitle, setNewTitle] = useState('')
     const [newTag, setNewTag] = useState('Scenery')
@@ -50,26 +17,15 @@ export default function GalleryView({ islandName }: { islandName: string }) {
         e.preventDefault()
         if (!newTitle || !newUrl) return
 
-        const newPhoto = {
-            id: Date.now(),
-            title: newTitle,
-            date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
-            tag: newTag,
-            url: newUrl,
-            likes: 1
-        }
-
-        setMemories([newPhoto, ...memories])
-        setNewTitle('')
-        setNewUrl('')
-        setIsModalOpen(false)
+        startTransition(async () => {
+            await addGalleryPhoto(islandId, newTitle, newTag, newUrl)
+            setNewTitle('')
+            setNewUrl('')
+            setIsModalOpen(false)
+        })
     }
 
-    const handleDeletePhoto = (id: number) => {
-        setMemories(memories.filter(m => m.id !== id))
-    }
-
-    const filteredMemories = memories.filter(m => {
+    const filteredMemories = initialPhotos.filter(m => {
         if (filter === 'All') return true
         return m.tag === filter
     })
@@ -81,10 +37,10 @@ export default function GalleryView({ islandName }: { islandName: string }) {
                 <div className="p-6 bg-white rounded-3xl border border-[#E4DFEA] shadow-xs space-y-3">
                     <div className="flex justify-between items-center">
                         <span className="text-xs font-semibold text-[#665773]">Album Storage</span>
-                        <span className="text-xs font-bold text-[#7A508C] bg-[#F4EEF8] px-2.5 py-1 rounded-full">{memories.length} / 50 Snaps</span>
+                        <span className="text-xs font-bold text-[#7A508C] bg-[#F4EEF8] px-2.5 py-1 rounded-full">{initialPhotos.length} Snaps Saved</span>
                     </div>
                     <div className="w-full bg-[#F6F4F8] h-3 rounded-full overflow-hidden border border-[#E4DFEA]">
-                        <div className="bg-gradient-to-r from-[#7A508C] to-[#9B77AD] h-full transition-all duration-500" style={{ width: `${(memories.length / 50) * 100}%` }}></div>
+                        <div className="bg-gradient-to-r from-[#7A508C] to-[#9B77AD] h-full transition-all duration-500" style={{ width: `${Math.min((initialPhotos.length / 50) * 100, 100)}%` }}></div>
                     </div>
                     <p className="text-[11px] text-[#93859E]">Capture your favorite moments around {islandName} 📸</p>
                 </div>
@@ -130,38 +86,47 @@ export default function GalleryView({ islandName }: { islandName: string }) {
                     <span className="text-xs text-[#93859E]">{filteredMemories.length} photos displayed</span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {filteredMemories.map(photo => (
-                        <div key={photo.id} className="p-3 bg-[#F9F7FB] rounded-3xl border border-[#EFEAF3] shadow-xs space-y-3 group relative hover:border-[#D5C6E3] transition-all">
-                            <button
-                                onClick={() => handleDeletePhoto(photo.id)}
-                                className="absolute top-5 right-5 w-7 h-7 bg-black/60 hover:bg-rose-600 text-white rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer z-10 shadow-sm"
-                                title="Delete Snap"
-                            >
-                                <X className="w-3.5 h-3.5" />
-                            </button>
+                {initialPhotos.length === 0 ? (
+                    <p className="text-xs text-[#93859E] text-center py-10">No memories captured yet. Click "Add Snap" to start your gallery!</p>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {filteredMemories.map(photo => (
+                            <div key={photo.id} className="p-3 bg-[#F9F7FB] rounded-3xl border border-[#EFEAF3] shadow-xs space-y-3 group relative hover:border-[#D5C6E3] transition-all">
+                                <button
+                                    disabled={pending}
+                                    onClick={() => {
+                                        startTransition(async () => {
+                                            await deleteGalleryPhoto(photo.id)
+                                        })
+                                    }}
+                                    className="absolute top-5 right-5 w-7 h-7 bg-black/60 hover:bg-rose-600 text-white rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer z-10 shadow-sm"
+                                    title="Delete Snap"
+                                >
+                                    <X className="w-3.5 h-3.5" />
+                                </button>
 
-                            <div className="w-full h-44 rounded-2xl overflow-hidden relative shadow-inner bg-[#EAE2F0]">
-                                <img
-                                    src={photo.url}
-                                    alt={photo.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
-                            <div className="px-1 flex justify-between items-start">
-                                <div>
-                                    <h4 className="font-bold text-xs text-[#2A2030]">{photo.title}</h4>
-                                    <p className="text-[10px] text-[#93859E] flex items-center gap-1 mt-0.5">
-                                        <Calendar className="w-2.5 h-2.5" /> {photo.date}
-                                    </p>
+                                <div className="w-full h-44 rounded-2xl overflow-hidden relative shadow-inner bg-[#EAE2F0]">
+                                    <img
+                                        src={photo.url}
+                                        alt={photo.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
                                 </div>
-                                <span className="text-[10px] bg-[#EAE2F0] text-[#7A508C] font-semibold px-2 py-0.5 rounded-full">
-                                    {photo.tag}
-                                </span>
+                                <div className="px-1 flex justify-between items-start">
+                                    <div>
+                                        <h4 className="font-bold text-xs text-[#2A2030]">{photo.title}</h4>
+                                        <p className="text-[10px] text-[#93859E] flex items-center gap-1 mt-0.5">
+                                            <Calendar className="w-2.5 h-2.5" /> {photo.date}
+                                        </p>
+                                    </div>
+                                    <span className="text-[10px] bg-[#EAE2F0] text-[#7A508C] font-semibold px-2 py-0.5 rounded-full">
+                                        {photo.tag}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Add Photo Modal */}
@@ -222,9 +187,10 @@ export default function GalleryView({ islandName }: { islandName: string }) {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="flex-1 py-3 bg-[#52435C] hover:bg-[#3D3044] text-white rounded-2xl text-xs font-semibold transition-colors cursor-pointer"
+                                    disabled={pending}
+                                    className="flex-1 py-3 bg-[#52435C] hover:bg-[#3D3044] text-white rounded-2xl text-xs font-semibold transition-colors cursor-pointer disabled:opacity-50"
                                 >
-                                    Save Snap
+                                    {pending ? 'Saving...' : 'Save Snap'}
                                 </button>
                             </div>
                         </form>

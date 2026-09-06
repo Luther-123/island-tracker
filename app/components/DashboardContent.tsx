@@ -14,20 +14,23 @@ import NotesView from './NotesView'
 import GalleryView from './GalleryView'
 import AccountManagerView from './AccountManagerView'
 import MapView from './MapView'
+
 export default function DashboardContent({
     user,
     island,
     tasks,
     collections,
     residents,
-    notes
+    notes,
+    gallery
 }: {
     user: any,
     island: any,
     tasks: any[],
     collections: any[],
     residents: any[],
-    notes: any[]
+    notes: any[],
+    gallery: any[]
 }) {
     const [currentView, setCurrentView] = useState('Overview')
     const [modalOpen, setModalOpen] = useState(false)
@@ -244,7 +247,7 @@ export default function DashboardContent({
                     <NotesView islandId={island.id} initialNotes={notes} />
                 )}
                 {currentView === 'Gallery' && (
-                    <GalleryView islandName={island.name} />
+                    <GalleryView islandId={island.id} islandName={island.name} initialPhotos={gallery} />
                 )}
                 {currentView === 'Settings' && (
                     <AccountManagerView user={user} island={island} />

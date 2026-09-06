@@ -56,6 +56,7 @@ export default async function IslandDashboard() {
     const collections = await sql`SELECT * FROM collections WHERE island_id = ${island.id}`
     const residents = await sql`SELECT * FROM residents WHERE island_id = ${island.id}`
     const notes = await sql`SELECT * FROM notes WHERE island_id = ${island.id}`
+    const gallery = await sql`SELECT * FROM gallery WHERE island_id = ${island.id} ORDER BY id DESC`
 
     return (
         <DashboardContent

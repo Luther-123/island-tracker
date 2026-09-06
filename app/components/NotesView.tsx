@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState, useTransition } from 'react'
-import { addNote, deleteNote } from '../actions'
 import { BookOpen, Plus, Trash2, Calendar } from 'lucide-react'
+import { addNote, deleteNote } from '../db-actions'
 
 export default function NotesView({ islandId, initialNotes }: { islandId: number, initialNotes: any[] }) {
     const [pending, startTransition] = useTransition()

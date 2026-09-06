@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useTransition } from 'react'
-import { deleteTask } from '../actions'
+import { deleteTask, updateTaskProgress } from '../db-actions'
 import { CheckCircle2, Clock, Trash2 } from 'lucide-react'
 
 export default function TaskList({ initialTasks }: { initialTasks: any[] }) {
@@ -16,13 +16,20 @@ export default function TaskList({ initialTasks }: { initialTasks: any[] }) {
                     const isDone = task.current >= task.target || task.status === 'Done'
                     return (
                         <div key={task.id} className="p-3 bg-[#F9F7FB] rounded-2xl border border-[#EFEAF3] flex items-center justify-between group transition-all hover:border-[#D5C6E3]">
-                            <div className="flex items-center gap-2.5">
+                            <div
+                                onClick={() => {
+                                    startTransition(async () => {
+                                        await updateTaskProgress(task.id, task.current, task.target)
+                                    })
+                                }}
+                                className="flex items-center gap-2.5 cursor-pointer flex-1"
+                            >
                                 <div className="w-7 h-7 rounded-xl bg-[#EAE2F0] flex items-center justify-center text-[#7A508C]">
                                     {isDone ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> : <Clock className="w-3.5 h-3.5" />}
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-xs text-[#2A2030]">{task.title}</h4>
-                                    <span className="text-[9px] text-[#93859E] uppercase font-medium">{task.category}</span>
+                                    <span className="text-[9px] text-[#93859E] uppercase font-medium">{task.category} • {task.current}/{task.target}</span>
                                 </div>
                             </div>
 
@@ -31,7 +38,8 @@ export default function TaskList({ initialTasks }: { initialTasks: any[] }) {
                                     {isDone ? 'Done' : 'Pending'}
                                 </span>
                                 <button
-                                    onClick={() => {
+                                    onClick={(e) => {
+                                        e.stopPropagation()
                                         startTransition(async () => {
                                             await deleteTask(task.id)
                                         })

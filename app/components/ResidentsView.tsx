@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useTransition } from 'react'
-import { deleteResident } from '../actions'
-import { Users, X, UserPlus, Heart, Sparkles } from 'lucide-react'
+import { deleteResident } from '../db-actions'
+import { Users, X, UserPlus } from 'lucide-react'
 
 export default function ResidentsView({
     initialResidents,
@@ -86,12 +86,13 @@ export default function ResidentsView({
                                 </div>
 
                                 <button
+                                    disabled={pending}
                                     onClick={() => {
                                         startTransition(async () => {
                                             await deleteResident(resident.id)
                                         })
                                     }}
-                                    className="w-8 h-8 rounded-xl bg-white border border-[#E4DFEA] text-[#93859E] hover:text-rose-600 hover:border-rose-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer shadow-xs"
+                                    className="w-8 h-8 rounded-xl bg-white border border-[#E4DFEA] text-[#93859E] hover:text-rose-600 hover:border-rose-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer shadow-xs disabled:opacity-50"
                                     title="Remove resident"
                                 >
                                     <X className="w-4 h-4" />
