@@ -21,7 +21,7 @@ export default function LoginPage() {
             await login(formData)
         } catch (err: any) {
             if (err?.message?.includes('NEXT_REDIRECT')) {
-                return // Expected redirect on success
+                return
             }
             setError(err?.message || 'Failed to login. Please check your credentials.')
             setLoading(false)
@@ -47,22 +47,26 @@ export default function LoginPage() {
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="text-xs font-semibold text-[#665773] block mb-1">Email Address</label>
+                        <label htmlFor="email" className="text-xs font-semibold text-[#665773] block mb-1">Email Address</label>
                         <input
+                            id="email"
                             name="email"
                             type="email"
                             required
+                            autoComplete="email"
                             placeholder="mayor@melody.isle"
                             className="w-full px-4 py-3 bg-[#F9F7FB] border border-[#E4DFEA] rounded-2xl text-xs focus:outline-none focus:border-[#7A508C]"
                         />
                     </div>
 
                     <div className="relative">
-                        <label className="text-xs font-semibold text-[#665773] block mb-1">Password</label>
+                        <label htmlFor="password" className="text-xs font-semibold text-[#665773] block mb-1">Password</label>
                         <input
+                            id="password"
                             name="password"
                             type={showPassword ? 'text' : 'password'}
                             required
+                            autoComplete="current-password"
                             placeholder="••••••••"
                             className="w-full px-4 py-3 bg-[#F9F7FB] border border-[#E4DFEA] rounded-2xl text-xs focus:outline-none focus:border-[#7A508C] pr-10"
                         />

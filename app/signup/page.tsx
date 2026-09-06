@@ -1,21 +1,31 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { signUp } from '../auth-actions'
-import { Sparkles, ArrowRight } from 'lucide-react'
+import { Sparkles, ArrowRight, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 
 export default function SignUpPage() {
-    const [mounted, setMounted] = useState(false)
     const [error, setError] = useState<string | null>(null)
+    const [loading, setLoading] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        setError(null)
+        setLoading(true)
 
-    if (!mounted) {
-        return null
+        const formData = new FormData(e.currentTarget)
+
+        try {
+            await signUp(formData)
+        } catch (err: any) {
+            if (err?.message?.includes('NEXT_REDIRECT')) {
+                return
+            }
+            setError(err?.message || 'Failed to establish island. Please try again.')
+            setLoading(false)
+        }
     }
 
     return (
@@ -35,44 +45,41 @@ export default function SignUpPage() {
                     </div>
                 )}
 
-                <form
-                    action={async (formData) => {
-                        try {
-                            await signUp(formData)
-                        } catch (err: any) {
-                            setError(err.message || 'Failed to sign up')
-                        }
-                    }}
-                    className="space-y-4"
-                >
+                <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="text-xs font-semibold text-[#665773] block mb-1">Mayor Name</label>
+                        <label htmlFor="name" className="text-xs font-semibold text-[#665773] block mb-1">Mayor Name</label>
                         <input
+                            id="name"
                             name="name"
                             type="text"
                             required
+                            autoComplete="name"
                             placeholder="e.g. Luther"
                             className="w-full px-4 py-3 bg-[#F9F7FB] border border-[#E4DFEA] rounded-2xl text-xs focus:outline-none focus:border-[#7A508C]"
                         />
                     </div>
 
                     <div>
-                        <label className="text-xs font-semibold text-[#665773] block mb-1">Email Address</label>
+                        <label htmlFor="email" className="text-xs font-semibold text-[#665773] block mb-1">Email Address</label>
                         <input
+                            id="email"
                             name="email"
                             type="email"
                             required
+                            autoComplete="email"
                             placeholder="mayor@melody.isle"
                             className="w-full px-4 py-3 bg-[#F9F7FB] border border-[#E4DFEA] rounded-2xl text-xs focus:outline-none focus:border-[#7A508C]"
                         />
                     </div>
 
                     <div className="relative">
-                        <label className="text-xs font-semibold text-[#665773] block mb-1">Password</label>
+                        <label htmlFor="password" className="text-xs font-semibold text-[#665773] block mb-1">Password</label>
                         <input
+                            id="password"
                             name="password"
                             type={showPassword ? 'text' : 'password'}
                             required
+                            autoComplete="new-password"
                             placeholder="••••••••"
                             className="w-full px-4 py-3 bg-[#F9F7FB] border border-[#E4DFEA] rounded-2xl text-xs focus:outline-none focus:border-[#7A508C] pr-10"
                         />
@@ -87,9 +94,14 @@ export default function SignUpPage() {
 
                     <button
                         type="submit"
-                        className="w-full py-3 bg-[#52435C] hover:bg-[#3D3044] text-white rounded-2xl text-xs font-semibold transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-xs"
+                        disabled={loading}
+                        className="w-full py-3 bg-[#52435C] hover:bg-[#3D3044] text-white rounded-2xl text-xs font-semibold transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-xs disabled:opacity-50"
                     >
-                        Establish Island <ArrowRight className="w-3.5 h-3.5" />
+                        {loading ? (
+                            <>Establishing... <Loader2 className="w-3.5 h-3.5 animate-spin" /></>
+                        ) : (
+                            <>Establish Island <ArrowRight className="w-3.5 h-3.5" /></>
+                        )}
                     </button>
                 </form>
 
