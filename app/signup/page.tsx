@@ -1,13 +1,22 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { signUp } from '../auth-actions'
 import { Sparkles, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function SignUpPage() {
+    const [mounted, setMounted] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const [showPassword, setShowPassword] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
 
     return (
         <div className="min-h-screen bg-[#F6F4F8] flex items-center justify-center p-6 font-sans">
