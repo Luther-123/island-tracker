@@ -107,3 +107,20 @@ export async function toggleTask(taskId: number, current: number, target: number
     `
     revalidatePath('/')
 }
+export async function toggleTaskStatus(taskId: number, currentStatus: number, target: number) {
+    const nextValue = currentStatus >= target ? 0 : currentStatus + 1
+    await sql`
+        UPDATE tasks 
+        SET current = ${nextValue} 
+        WHERE id = ${taskId}
+    `
+    revalidatePath('/')
+}
+
+export async function addNoteToIsland(islandId: number, title: string, content: string) {
+    await sql`
+        INSERT INTO notes (island_id, title, content) 
+        VALUES (${islandId}, ${title}, ${content})
+    `
+    revalidatePath('/')
+}

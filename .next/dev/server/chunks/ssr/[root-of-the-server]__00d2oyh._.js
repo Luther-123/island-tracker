@@ -80,41 +80,56 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 async function signUp(formData) {
+    const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
-    const name = formData.get('name');
-    if (!email || !password || !name) return;
-    const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
-      INSERT INTO users (email, password_hash, display_name) 
-      VALUES (${email}, ${password}, ${name}) 
-      RETURNING id
-    `;
-    const userId = users[0].id;
-    await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
-      INSERT INTO islands (user_id, name, hemisphere, player_name) 
-      VALUES (${userId}, 'Melody Isle', 'Northern', ${name})
-    `;
-    const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
-    cookieStore.set('user_id', userId.toString(), {
-        httpOnly: true,
-        secure: true
-    });
+    try {
+        // Check if user already exists
+        const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`SELECT id FROM users WHERE email = ${email}`;
+        if (existing.length > 0) {
+            throw new Error('An account with this email already exists.');
+        }
+        // Insert new user into Neon database
+        const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
+            INSERT INTO users (display_name, email, password_hash) 
+            VALUES (${name}, ${email}, ${password}) 
+            RETURNING id, display_name
+        `;
+        const user = users[0];
+        // Set session cookie
+        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
+        cookieStore.set('user_id', user.id.toString(), {
+            httpOnly: true,
+            secure: ("TURBOPACK compile-time value", "development") === 'production',
+            path: '/',
+            maxAge: 60 * 60 * 24 * 7 // 1 week
+        });
+    } catch (error) {
+        console.error('Signup error:', error);
+        throw new Error(error.message || 'Database registration failed.');
+    }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/');
 }
 async function login(formData) {
     const email = formData.get('email');
     const password = formData.get('password');
-    const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
-      SELECT * FROM users WHERE email = ${email} AND password_hash = ${password}
-    `;
-    if (users.length === 0) {
-        throw new Error('Invalid email or password');
+    try {
+        const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`SELECT * FROM users WHERE email = ${email}`;
+        const user = users[0];
+        if (!user || user.password_hash !== password) {
+            throw new Error('Invalid email or password.');
+        }
+        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
+        cookieStore.set('user_id', user.id.toString(), {
+            httpOnly: true,
+            secure: ("TURBOPACK compile-time value", "development") === 'production',
+            path: '/',
+            maxAge: 60 * 60 * 24 * 7 // 1 week
+        });
+    } catch (error) {
+        console.error('Login error:', error);
+        throw new Error(error.message || 'Login failed.');
     }
-    const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
-    cookieStore.set('user_id', users[0].id.toString(), {
-        httpOnly: true,
-        secure: true
-    });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/');
 }
 async function logout() {

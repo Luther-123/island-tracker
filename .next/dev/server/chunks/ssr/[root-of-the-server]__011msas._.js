@@ -93,9 +93,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$ap
 "[project]/app/actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"40263a06fafccd7e992998ccda44c847d55a2d24c2":{"name":"deleteResident"},"40677f0fbe32c3b02e1b9b852925a11e2e866cffe5":{"name":"deleteNote"},"4079978194bc2bd68cb63b5c2583bbb83f46dd27ac":{"name":"deleteTask"},"40a4f81e71e4e96a9a4afb952f506ed24dfc13f3b9":{"name":"deleteCollection"},"607d2aad35a0dffc9c58af8e65d6c199ff59637eae":{"name":"addResident"},"6087408c431bfa5d9a58213aa94ef81492b1f042c9":{"name":"addTask"},"60972e8b374d78ad2d0608be5470a13d85a046f066":{"name":"addNote"},"60cba34593700e6aa86c47a2a3cef1e01269339c03":{"name":"toggleCollection"},"60cc06f9cb51576ea042fa9d6a9db58122f1fca406":{"name":"toggleTaskCompletion"},"60f62dc4899c9dae8e890d168cc92adc3e6a46d752":{"name":"toggleCollectionStatus"},"7023b7524d6502ee01472c8badb3c64567ede18eec":{"name":"toggleTask"}},"app/actions.ts",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"40263a06fafccd7e992998ccda44c847d55a2d24c2":{"name":"deleteResident"},"40677f0fbe32c3b02e1b9b852925a11e2e866cffe5":{"name":"deleteNote"},"4079978194bc2bd68cb63b5c2583bbb83f46dd27ac":{"name":"deleteTask"},"40a4f81e71e4e96a9a4afb952f506ed24dfc13f3b9":{"name":"deleteCollection"},"607d2aad35a0dffc9c58af8e65d6c199ff59637eae":{"name":"addResident"},"6087408c431bfa5d9a58213aa94ef81492b1f042c9":{"name":"addTask"},"60972e8b374d78ad2d0608be5470a13d85a046f066":{"name":"addNote"},"60cba34593700e6aa86c47a2a3cef1e01269339c03":{"name":"toggleCollection"},"60cc06f9cb51576ea042fa9d6a9db58122f1fca406":{"name":"toggleTaskCompletion"},"60f62dc4899c9dae8e890d168cc92adc3e6a46d752":{"name":"toggleCollectionStatus"},"7023b7524d6502ee01472c8badb3c64567ede18eec":{"name":"toggleTask"},"705d3bf413c4661097b7f8f553bfb4e5db5468dc71":{"name":"toggleTaskStatus"},"70ea1a630463b884495c0d721b12d779961dabb532":{"name":"addNoteToIsland"}},"app/actions.ts",""] */ __turbopack_context__.s([
     "addNote",
     ()=>addNote,
+    "addNoteToIsland",
+    ()=>addNoteToIsland,
     "addResident",
     ()=>addResident,
     "addTask",
@@ -115,7 +117,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$ap
     "toggleTask",
     ()=>toggleTask,
     "toggleTaskCompletion",
-    ()=>toggleTaskCompletion
+    ()=>toggleTaskCompletion,
+    "toggleTaskStatus",
+    ()=>toggleTaskStatus
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/lib/db.ts [app-rsc] (ecmascript)");
@@ -217,6 +221,22 @@ async function toggleTask(taskId, current, target) {
     `;
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/');
 }
+async function toggleTaskStatus(taskId, currentStatus, target) {
+    const nextValue = currentStatus >= target ? 0 : currentStatus + 1;
+    await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
+        UPDATE tasks 
+        SET current = ${nextValue} 
+        WHERE id = ${taskId}
+    `;
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/');
+}
+async function addNoteToIsland(islandId, title, content) {
+    await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
+        INSERT INTO notes (island_id, title, content) 
+        VALUES (${islandId}, ${title}, ${content})
+    `;
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/');
+}
 ;
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
     toggleTaskCompletion,
@@ -229,7 +249,9 @@ async function toggleTask(taskId, current, target) {
     deleteTask,
     toggleCollection,
     deleteCollection,
-    toggleTask
+    toggleTask,
+    toggleTaskStatus,
+    addNoteToIsland
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTaskCompletion, "60cc06f9cb51576ea042fa9d6a9db58122f1fca406", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleCollectionStatus, "60f62dc4899c9dae8e890d168cc92adc3e6a46d752", null);
@@ -242,6 +264,8 @@ async function toggleTask(taskId, current, target) {
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleCollection, "60cba34593700e6aa86c47a2a3cef1e01269339c03", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteCollection, "40a4f81e71e4e96a9a4afb952f506ed24dfc13f3b9", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTask, "7023b7524d6502ee01472c8badb3c64567ede18eec", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTaskStatus, "705d3bf413c4661097b7f8f553bfb4e5db5468dc71", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addNoteToIsland, "70ea1a630463b884495c0d721b12d779961dabb532", null);
 }),
 "[project]/app/auth-actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -265,41 +289,56 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 async function signUp(formData) {
+    const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
-    const name = formData.get('name');
-    if (!email || !password || !name) return;
-    const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
-      INSERT INTO users (email, password_hash, display_name) 
-      VALUES (${email}, ${password}, ${name}) 
-      RETURNING id
-    `;
-    const userId = users[0].id;
-    await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
-      INSERT INTO islands (user_id, name, hemisphere, player_name) 
-      VALUES (${userId}, 'Melody Isle', 'Northern', ${name})
-    `;
-    const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
-    cookieStore.set('user_id', userId.toString(), {
-        httpOnly: true,
-        secure: true
-    });
+    try {
+        // Check if user already exists
+        const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`SELECT id FROM users WHERE email = ${email}`;
+        if (existing.length > 0) {
+            throw new Error('An account with this email already exists.');
+        }
+        // Insert new user into Neon database
+        const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
+            INSERT INTO users (display_name, email, password_hash) 
+            VALUES (${name}, ${email}, ${password}) 
+            RETURNING id, display_name
+        `;
+        const user = users[0];
+        // Set session cookie
+        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
+        cookieStore.set('user_id', user.id.toString(), {
+            httpOnly: true,
+            secure: ("TURBOPACK compile-time value", "development") === 'production',
+            path: '/',
+            maxAge: 60 * 60 * 24 * 7 // 1 week
+        });
+    } catch (error) {
+        console.error('Signup error:', error);
+        throw new Error(error.message || 'Database registration failed.');
+    }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/');
 }
 async function login(formData) {
     const email = formData.get('email');
     const password = formData.get('password');
-    const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`
-      SELECT * FROM users WHERE email = ${email} AND password_hash = ${password}
-    `;
-    if (users.length === 0) {
-        throw new Error('Invalid email or password');
+    try {
+        const users = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sql"]`SELECT * FROM users WHERE email = ${email}`;
+        const user = users[0];
+        if (!user || user.password_hash !== password) {
+            throw new Error('Invalid email or password.');
+        }
+        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
+        cookieStore.set('user_id', user.id.toString(), {
+            httpOnly: true,
+            secure: ("TURBOPACK compile-time value", "development") === 'production',
+            path: '/',
+            maxAge: 60 * 60 * 24 * 7 // 1 week
+        });
+    } catch (error) {
+        console.error('Login error:', error);
+        throw new Error(error.message || 'Login failed.');
     }
-    const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
-    cookieStore.set('user_id', users[0].id.toString(), {
-        httpOnly: true,
-        secure: true
-    });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/');
 }
 async function logout() {

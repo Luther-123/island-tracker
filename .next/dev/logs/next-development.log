@@ -1,2 +1,7 @@
 {"timestamp":"00:00:00.813","source":"Server","level":"LOG","message":""}
 {"timestamp":"00:00:24.819","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:15:16.275","source":"Server","level":"LOG","message":"✓ Compiled in 239ms"}
+{"timestamp":"00:15:27.324","source":"Server","level":"LOG","message":"✓ Compiled in 124ms"}
+{"timestamp":"00:18:52.935","source":"Server","level":"LOG","message":"✓ Compiled in 109ms"}
+{"timestamp":"00:23:14.201","source":"Server","level":"LOG","message":"✓ Compiled in 190ms"}
+{"timestamp":"00:37:04.984","source":"Server","level":"LOG","message":"  Reload env: .env"}

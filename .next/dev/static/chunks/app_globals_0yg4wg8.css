@@ -129,6 +129,7 @@
     --radius-xl: .75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
+    --animate-spin: spin 1s linear infinite;
     --blur-xs: 4px;
     --blur-md: 12px;
     --default-transition-duration: .15s;
@@ -651,6 +652,10 @@
 
   .scale-\[1\.02\] {
     scale: 1.02;
+  }
+
+  .animate-spin {
+    animation: var(--animate-spin);
   }
 
   .cursor-pointer {
@@ -1647,6 +1652,10 @@
     outline-style: none;
   }
 
+  .disabled\:opacity-50:disabled {
+    opacity: .5;
+  }
+
   @media (min-width: 48rem) {
     .md\:flex {
       display: flex;
@@ -2008,6 +2017,12 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=app_globals_0yg4wg8.css.map*/
