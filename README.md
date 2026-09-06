@@ -21,7 +21,7 @@ A full-stack, multi-user Animal Crossing island management dashboard built with 
 
 1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/Luther-123/island-tracker.git](https://github.com/Luther-123/island-tracker.git)
+   git clone https://github.com/Luther-123/island-tracker.git
    cd island-tracker
 
 2. **Install dependencies**:
