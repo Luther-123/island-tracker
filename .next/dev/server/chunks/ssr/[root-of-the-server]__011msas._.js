@@ -45,27 +45,27 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
-    "007a2a69177150d9407ce31bd20fd0ca812018446a",
+    "008e6936adc6f1e5f5d6dee81d0f4cb8d5387077c7",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$auth$2d$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["logout"],
-    "400c384469336b85e00819ae0fa0c9dd7de15c788e",
+    "40263a06fafccd7e992998ccda44c847d55a2d24c2",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteResident"],
-    "406e75547845015bd469f8e5c01b9548e77f9690de",
+    "40677f0fbe32c3b02e1b9b852925a11e2e866cffe5",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteNote"],
-    "40a6a7695068b1351aa486530399de3249616e9777",
+    "4079978194bc2bd68cb63b5c2583bbb83f46dd27ac",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteTask"],
-    "40e7047437766d95ac20ea85372cb18727b3ee81ba",
+    "40a4f81e71e4e96a9a4afb952f506ed24dfc13f3b9",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteCollection"],
-    "60182a9243c5afd28062276c4e2536fc9e2ad337d3",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toggleCollection"],
-    "6025b9be2db309954393b45b822fadd17e71590876",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toggleCollectionStatus"],
-    "608f027eca4685fe4f9000ae2700595185a00852b6",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addNote"],
-    "609d3e9a28b1f331b1db437a88a9a0a27c57cc6bb3",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addTask"],
-    "60a2cc1eeb96dd598f27963609032b9d13b8c415a7",
+    "607d2aad35a0dffc9c58af8e65d6c199ff59637eae",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addResident"],
-    "70d757bdd296ab90b9214fec7c6084c61cb6da108c",
+    "6087408c431bfa5d9a58213aa94ef81492b1f042c9",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addTask"],
+    "60972e8b374d78ad2d0608be5470a13d85a046f066",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addNote"],
+    "60cba34593700e6aa86c47a2a3cef1e01269339c03",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toggleCollection"],
+    "60f62dc4899c9dae8e890d168cc92adc3e6a46d752",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toggleCollectionStatus"],
+    "7023b7524d6502ee01472c8badb3c64567ede18eec",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toggleTask"]
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$app$2f$auth$2d$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE1__$3d3e$__$225b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i('[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => "[project]/app/auth-actions.ts [app-rsc] (ecmascript)", ACTIONS_MODULE1 => "[project]/app/actions.ts [app-rsc] (ecmascript)" } [app-rsc] (server actions loader, ecmascript) <locals>');
@@ -93,7 +93,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$ap
 "[project]/app/actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"400c384469336b85e00819ae0fa0c9dd7de15c788e":{"name":"deleteResident"},"406e75547845015bd469f8e5c01b9548e77f9690de":{"name":"deleteNote"},"40a6a7695068b1351aa486530399de3249616e9777":{"name":"deleteTask"},"40e7047437766d95ac20ea85372cb18727b3ee81ba":{"name":"deleteCollection"},"60182a9243c5afd28062276c4e2536fc9e2ad337d3":{"name":"toggleCollection"},"6025b9be2db309954393b45b822fadd17e71590876":{"name":"toggleCollectionStatus"},"608f027eca4685fe4f9000ae2700595185a00852b6":{"name":"addNote"},"609c081feb8b85024d34e7debbbe8dfe6e8a7f48f3":{"name":"toggleTaskCompletion"},"609d3e9a28b1f331b1db437a88a9a0a27c57cc6bb3":{"name":"addTask"},"60a2cc1eeb96dd598f27963609032b9d13b8c415a7":{"name":"addResident"},"70d757bdd296ab90b9214fec7c6084c61cb6da108c":{"name":"toggleTask"}},"app/actions.ts",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"40263a06fafccd7e992998ccda44c847d55a2d24c2":{"name":"deleteResident"},"40677f0fbe32c3b02e1b9b852925a11e2e866cffe5":{"name":"deleteNote"},"4079978194bc2bd68cb63b5c2583bbb83f46dd27ac":{"name":"deleteTask"},"40a4f81e71e4e96a9a4afb952f506ed24dfc13f3b9":{"name":"deleteCollection"},"607d2aad35a0dffc9c58af8e65d6c199ff59637eae":{"name":"addResident"},"6087408c431bfa5d9a58213aa94ef81492b1f042c9":{"name":"addTask"},"60972e8b374d78ad2d0608be5470a13d85a046f066":{"name":"addNote"},"60cba34593700e6aa86c47a2a3cef1e01269339c03":{"name":"toggleCollection"},"60cc06f9cb51576ea042fa9d6a9db58122f1fca406":{"name":"toggleTaskCompletion"},"60f62dc4899c9dae8e890d168cc92adc3e6a46d752":{"name":"toggleCollectionStatus"},"7023b7524d6502ee01472c8badb3c64567ede18eec":{"name":"toggleTask"}},"app/actions.ts",""] */ __turbopack_context__.s([
     "addNote",
     ()=>addNote,
     "addResident",
@@ -231,22 +231,22 @@ async function toggleTask(taskId, current, target) {
     deleteCollection,
     toggleTask
 ]);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTaskCompletion, "609c081feb8b85024d34e7debbbe8dfe6e8a7f48f3", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleCollectionStatus, "6025b9be2db309954393b45b822fadd17e71590876", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addTask, "609d3e9a28b1f331b1db437a88a9a0a27c57cc6bb3", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addResident, "60a2cc1eeb96dd598f27963609032b9d13b8c415a7", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteResident, "400c384469336b85e00819ae0fa0c9dd7de15c788e", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addNote, "608f027eca4685fe4f9000ae2700595185a00852b6", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteNote, "406e75547845015bd469f8e5c01b9548e77f9690de", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteTask, "40a6a7695068b1351aa486530399de3249616e9777", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleCollection, "60182a9243c5afd28062276c4e2536fc9e2ad337d3", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteCollection, "40e7047437766d95ac20ea85372cb18727b3ee81ba", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTask, "70d757bdd296ab90b9214fec7c6084c61cb6da108c", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTaskCompletion, "60cc06f9cb51576ea042fa9d6a9db58122f1fca406", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleCollectionStatus, "60f62dc4899c9dae8e890d168cc92adc3e6a46d752", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addTask, "6087408c431bfa5d9a58213aa94ef81492b1f042c9", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addResident, "607d2aad35a0dffc9c58af8e65d6c199ff59637eae", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteResident, "40263a06fafccd7e992998ccda44c847d55a2d24c2", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(addNote, "60972e8b374d78ad2d0608be5470a13d85a046f066", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteNote, "40677f0fbe32c3b02e1b9b852925a11e2e866cffe5", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteTask, "4079978194bc2bd68cb63b5c2583bbb83f46dd27ac", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleCollection, "60cba34593700e6aa86c47a2a3cef1e01269339c03", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteCollection, "40a4f81e71e4e96a9a4afb952f506ed24dfc13f3b9", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(toggleTask, "7023b7524d6502ee01472c8badb3c64567ede18eec", null);
 }),
 "[project]/app/auth-actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"007a2a69177150d9407ce31bd20fd0ca812018446a":{"name":"logout"},"402039df9f532a0b7965f7fbba269e2a87a86d513b":{"name":"login"},"4046c5dd16d5f31cb5c05bc280e9b938c93bede5f1":{"name":"signUp"}},"app/auth-actions.ts",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"008e6936adc6f1e5f5d6dee81d0f4cb8d5387077c7":{"name":"logout"},"401ea7005dc2c4bd0083800840e1a20c7d522cf486":{"name":"signUp"},"40bac0ef11541d890b243d1546b710591e3367f5c7":{"name":"login"}},"app/auth-actions.ts",""] */ __turbopack_context__.s([
     "login",
     ()=>login,
     "logout",
@@ -313,9 +313,9 @@ async function logout() {
     login,
     logout
 ]);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(signUp, "4046c5dd16d5f31cb5c05bc280e9b938c93bede5f1", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "402039df9f532a0b7965f7fbba269e2a87a86d513b", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "007a2a69177150d9407ce31bd20fd0ca812018446a", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(signUp, "401ea7005dc2c4bd0083800840e1a20c7d522cf486", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "40bac0ef11541d890b243d1546b710591e3367f5c7", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "008e6936adc6f1e5f5d6dee81d0f4cb8d5387077c7", null);
 }),
 "[project]/app/lib/db.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -326,10 +326,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$postgres$2f$src$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/postgres/src/index.js [app-rsc] (ecmascript)");
 ;
-const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-    throw new Error('DATABASE_URL is missing from environment variables.');
-}
+const connectionString = process.env.DATABASE_URL && process.env.DATABASE_URL.startsWith('postgres') ? process.env.DATABASE_URL : 'postgres://postgres:postgres@localhost:5432/postgres';
 const sql = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$postgres$2f$src$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(connectionString, {
     ssl: {
         rejectUnauthorized: false

@@ -45,7 +45,7 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
-    "402039df9f532a0b7965f7fbba269e2a87a86d513b",
+    "40bac0ef11541d890b243d1546b710591e3367f5c7",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$auth$2d$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["login"]
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$login$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$app$2f$auth$2d$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i('[project]/.next-internal/server/app/login/page/actions.js { ACTIONS_MODULE0 => "[project]/app/auth-actions.ts [app-rsc] (ecmascript)" } [app-rsc] (server actions loader, ecmascript) <locals>');
@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$auth$2d$actions$2e$ts
 "[project]/app/auth-actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"007a2a69177150d9407ce31bd20fd0ca812018446a":{"name":"logout"},"402039df9f532a0b7965f7fbba269e2a87a86d513b":{"name":"login"},"4046c5dd16d5f31cb5c05bc280e9b938c93bede5f1":{"name":"signUp"}},"app/auth-actions.ts",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"008e6936adc6f1e5f5d6dee81d0f4cb8d5387077c7":{"name":"logout"},"401ea7005dc2c4bd0083800840e1a20c7d522cf486":{"name":"signUp"},"40bac0ef11541d890b243d1546b710591e3367f5c7":{"name":"login"}},"app/auth-actions.ts",""] */ __turbopack_context__.s([
     "login",
     ()=>login,
     "logout",
@@ -128,9 +128,9 @@ async function logout() {
     login,
     logout
 ]);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(signUp, "4046c5dd16d5f31cb5c05bc280e9b938c93bede5f1", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "402039df9f532a0b7965f7fbba269e2a87a86d513b", null);
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "007a2a69177150d9407ce31bd20fd0ca812018446a", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(signUp, "401ea7005dc2c4bd0083800840e1a20c7d522cf486", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "40bac0ef11541d890b243d1546b710591e3367f5c7", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "008e6936adc6f1e5f5d6dee81d0f4cb8d5387077c7", null);
 }),
 "[project]/app/lib/db.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -141,10 +141,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$postgres$2f$src$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/postgres/src/index.js [app-rsc] (ecmascript)");
 ;
-const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-    throw new Error('DATABASE_URL is missing from environment variables.');
-}
+const connectionString = process.env.DATABASE_URL && process.env.DATABASE_URL.startsWith('postgres') ? process.env.DATABASE_URL : 'postgres://postgres:postgres@localhost:5432/postgres';
 const sql = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$postgres$2f$src$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(connectionString, {
     ssl: {
         rejectUnauthorized: false
