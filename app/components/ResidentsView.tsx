@@ -5,9 +5,11 @@ import { deleteResident } from '../db-actions'
 import { Users, X, UserPlus } from 'lucide-react'
 
 export default function ResidentsView({
+    islandId,
     initialResidents,
     onInviteClick
 }: {
+    islandId: number
     initialResidents: any[]
     onInviteClick: () => void
 }) {

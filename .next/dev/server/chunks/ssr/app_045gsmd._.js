@@ -1521,14 +1521,14 @@ function DashboardContent({ user, island, tasks, collections, residents, notes, 
                                                         className: "w-4 h-4 text-[#7A508C]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/DashboardContent.tsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 172,
                                                         columnNumber: 37
                                                     }, this),
                                                     " Latest Photo"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/DashboardContent.tsx",
-                                                lineNumber: 172,
+                                                lineNumber: 171,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1537,59 +1537,59 @@ function DashboardContent({ user, island, tasks, collections, residents, notes, 
                                                 children: "View all"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/DashboardContent.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 174,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/DashboardContent.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 170,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-full h-40 rounded-2xl overflow-hidden relative shadow-inner bg-[#EAE2F0]",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=800&auto=format&fit=crop",
-                                            alt: "Lavender Forest Path",
+                                            src: gallery.length > 0 ? gallery[0].url : "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=800&auto=format&fit=crop",
+                                            alt: "Latest Island Snap",
                                             className: "w-full h-full object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/DashboardContent.tsx",
-                                            lineNumber: 180,
+                                            lineNumber: 179,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/DashboardContent.tsx",
-                                        lineNumber: 179,
+                                        lineNumber: 178,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                 className: "font-bold text-xs text-[#2A2030]",
-                                                children: "My small forest path ✨"
+                                                children: gallery.length > 0 ? gallery[0].title : 'My small forest path ✨'
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/DashboardContent.tsx",
-                                                lineNumber: 187,
+                                                lineNumber: 186,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-[10px] text-[#93859E]",
-                                                children: "19 Sep 2026"
+                                                children: gallery.length > 0 ? gallery[0].date : '19 Sep 2026'
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/DashboardContent.tsx",
-                                                lineNumber: 188,
+                                                lineNumber: 187,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/DashboardContent.tsx",
-                                        lineNumber: 186,
+                                        lineNumber: 185,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/DashboardContent.tsx",
-                                lineNumber: 170,
+                                lineNumber: 169,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1786,6 +1786,7 @@ function DashboardContent({ user, island, tasks, collections, residents, notes, 
                         columnNumber: 21
                     }, this),
                     currentView === 'Residents' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ResidentsView$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        islandId: island.id,
                         initialResidents: residents,
                         onInviteClick: openResidentModal
                     }, void 0, false, {
@@ -3462,7 +3463,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-function ResidentsView({ initialResidents, onInviteClick }) {
+function ResidentsView({ islandId, initialResidents, onInviteClick }) {
     const [pending, startTransition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useTransition"])();
     const residentCount = initialResidents.length;
     const maxResidents = 10;
@@ -3484,7 +3485,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                         children: "Plot Occupancy"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 25,
+                                        lineNumber: 27,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3495,13 +3496,13 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 26,
+                                        lineNumber: 28,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 24,
+                                lineNumber: 26,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3513,12 +3514,12 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ResidentsView.tsx",
-                                    lineNumber: 29,
+                                    lineNumber: 31,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 28,
+                                lineNumber: 30,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3529,13 +3530,13 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 31,
+                                lineNumber: 33,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/ResidentsView.tsx",
-                        lineNumber: 23,
+                        lineNumber: 25,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3549,7 +3550,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                         children: "Island Vibe"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 38,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -3557,7 +3558,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                         children: "✨ Lively & Cozy"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 39,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3565,13 +3566,13 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                         children: "Your villagers love wandering around Melody Isle!"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 40,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 35,
+                                lineNumber: 37,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3579,13 +3580,13 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                 children: "🐾"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 40,
+                                lineNumber: 42,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/ResidentsView.tsx",
-                        lineNumber: 34,
+                        lineNumber: 36,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3598,7 +3599,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                     children: "Invite Action"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ResidentsView.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 49,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3611,36 +3612,36 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                                 className: "w-3.5 h-3.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                                lineNumber: 53,
+                                                lineNumber: 55,
                                                 columnNumber: 33
                                             }, this),
                                             " Invite Resident"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 51,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ResidentsView.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 50,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/ResidentsView.tsx",
-                            lineNumber: 46,
+                            lineNumber: 48,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/ResidentsView.tsx",
-                        lineNumber: 45,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/ResidentsView.tsx",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3656,14 +3657,14 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                         className: "w-4.5 h-4.5 text-[#7A508C]"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 66,
                                         columnNumber: 25
                                     }, this),
                                     " Neighborhood Roster"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 63,
+                                lineNumber: 65,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3674,13 +3675,13 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 66,
+                                lineNumber: 68,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/ResidentsView.tsx",
-                        lineNumber: 62,
+                        lineNumber: 64,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3690,7 +3691,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                             children: "No residents on your island yet. Invite someone over!"
                         }, void 0, false, {
                             fileName: "[project]/app/components/ResidentsView.tsx",
-                            lineNumber: 71,
+                            lineNumber: 73,
                             columnNumber: 25
                         }, this) : initialResidents.map((resident)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "p-4 bg-[#F9F7FB] rounded-2xl border border-[#EFEAF3] flex items-center justify-between group transition-all hover:border-[#D5C6E3]",
@@ -3703,7 +3704,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                                 children: resident.name[0]
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 78,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3713,7 +3714,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                                         children: resident.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                                        lineNumber: 80,
+                                                        lineNumber: 82,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3724,7 +3725,7 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                                                 children: resident.species
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                                                lineNumber: 82,
+                                                                lineNumber: 84,
                                                                 columnNumber: 45
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3732,25 +3733,25 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                                                 children: resident.personality
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                                                lineNumber: 83,
+                                                                lineNumber: 85,
                                                                 columnNumber: 45
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                                        lineNumber: 81,
+                                                        lineNumber: 83,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                                lineNumber: 79,
+                                                lineNumber: 81,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 77,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3766,35 +3767,35 @@ function ResidentsView({ initialResidents, onInviteClick }) {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/ResidentsView.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 100,
                                             columnNumber: 37
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ResidentsView.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 90,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, resident.id, true, {
                                 fileName: "[project]/app/components/ResidentsView.tsx",
-                                lineNumber: 74,
+                                lineNumber: 76,
                                 columnNumber: 29
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/components/ResidentsView.tsx",
-                        lineNumber: 69,
+                        lineNumber: 71,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/ResidentsView.tsx",
-                lineNumber: 61,
+                lineNumber: 63,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/ResidentsView.tsx",
-        lineNumber: 20,
+        lineNumber: 22,
         columnNumber: 9
     }, this);
 }

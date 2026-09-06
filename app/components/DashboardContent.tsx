@@ -166,7 +166,6 @@ export default function DashboardContent({
                         </div>
 
                         {/* Section 3: Latest Photo Preview */}
-                        {/* Gallery Photo Preview Card */}
                         <div className="p-6 bg-white rounded-3xl border border-[#E4DFEA] shadow-xs space-y-4 flex flex-col justify-between">
                             <div className="flex justify-between items-center border-b border-[#F0EBF4] pb-3">
                                 <h3 className="font-bold text-sm text-[#2A2030] flex items-center gap-2">
@@ -178,16 +177,17 @@ export default function DashboardContent({
                             </div>
                             <div className="w-full h-40 rounded-2xl overflow-hidden relative shadow-inner bg-[#EAE2F0]">
                                 <img
-                                    src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=800&auto=format&fit=crop"
-                                    alt="Lavender Forest Path"
+                                    src={gallery.length > 0 ? gallery[0].url : "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=800&auto=format&fit=crop"}
+                                    alt="Latest Island Snap"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
                             <div>
-                                <h4 className="font-bold text-xs text-[#2A2030]">My small forest path ✨</h4>
-                                <p className="text-[10px] text-[#93859E]">19 Sep 2026</p>
+                                <h4 className="font-bold text-xs text-[#2A2030]">{gallery.length > 0 ? gallery[0].title : 'My small forest path ✨'}</h4>
+                                <p className="text-[10px] text-[#93859E]">{gallery.length > 0 ? gallery[0].date : '19 Sep 2026'}</p>
                             </div>
                         </div>
+
                         {/* Section 4: Collections Grid */}
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
@@ -241,7 +241,7 @@ export default function DashboardContent({
                     <CollectionsView islandId={island.id} initialCollections={collections} />
                 )}
                 {currentView === 'Residents' && (
-                    <ResidentsView initialResidents={residents} onInviteClick={openResidentModal} />
+                    <ResidentsView islandId={island.id} initialResidents={residents} onInviteClick={openResidentModal} />
                 )}
                 {currentView === 'Notes' && (
                     <NotesView islandId={island.id} initialNotes={notes} />
