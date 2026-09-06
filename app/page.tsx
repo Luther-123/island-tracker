@@ -66,6 +66,7 @@ export default async function IslandDashboard() {
             collections={collections}
             residents={residents}
             notes={notes}
+            gallery={gallery}
         />
     )
 }

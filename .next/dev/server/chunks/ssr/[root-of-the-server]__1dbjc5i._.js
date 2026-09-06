@@ -111,7 +111,8 @@ async function IslandDashboard() {
         tasks: tasks,
         collections: collections,
         residents: residents,
-        notes: notes
+        notes: notes,
+        gallery: gallery
     }, void 0, false, {
         fileName: "[project]/app/page.tsx",
         lineNumber: 62,
